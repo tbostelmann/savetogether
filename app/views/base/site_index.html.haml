@@ -4,12 +4,19 @@
 
 .content
   .top{:style => "width: 900px; float: left;"}
-    #question{:style => "float: left; width: 45%; margin-left: 120px; margin-top: 10px; margin-bottom: 10px;"}
-      -#image_tag image_path('graphics/what-if-you-had-the-economic-power-to-break-poverty.jpg'), {:alt => 'what if you had the economic power to break povery?', :style => "margin-left: 25px; margin-bottom: -10px;"}
-      %span{:style => "font-size: 26px; font-weight: bold; color: #5B930D; font-style: italic;"}
-        What if you could help someone help themselves?
-      %span{:style => "font-size: 26px; font-weight: bold; color: #ec972c; font-style: italic;"}
-        Now you can!
+    #question{:style => "float: left; width: 65%; height: 90px; margin-top: 10px; margin-bottom: 10px;"}
+      %table
+        %tr
+          %td
+            -#image_tag image_path('graphics/what-if-you-had-the-economic-power-to-break-poverty.jpg'), {:alt => 'what if you had the economic power to break povery?', :style => "margin-left: 25px; margin-bottom: -10px;"}
+            %span{:style => "font-size: 26px; font-weight: bold; color: #5B930D; font-style: italic;"}
+              What if you could help someone help themselves?
+            %span{:style => "font-size: 26px; font-weight: bold; color: #ec972c; font-style: italic;"}
+              Now you can!
+          %td
+            %a{:href => "http://bit.ly/aNP9UJ"}
+              %img{:src => "http://a0.ccg.contextoptional.com/images/support_us.png?1276463974"}
+
     #success-stories{:style => "float: right; width: 220px; height: 340px;"}
       .success-story#fadeOn
         .image{:style => "width: 220px; border: 1px dashed #bbbbbb;"}
