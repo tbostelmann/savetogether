@@ -574,6 +574,8 @@ en:
   goal: Goal
   #en: goal_description: Goal Description
   goal_description: Goal Description
+  #en: graduated_saver_hover_link: Go to FAQ to find out what it means for a saver to be graduated
+  graduated_saver_hover_link: Go to FAQ to find out what it means for a saver to be graduated
   #en: have_an_account: "Have an account? "
   have_an_account: "Have an account? "
   #en: have_something_to_contribute: Have something to contribute?
@@ -1111,6 +1113,8 @@ en:
   save_post_as: "Save post as:"
   #en: save_reply: Save reply
   save_reply: Save reply
+  #en: saver_graduated: Graduated
+  saver_graduated: "Graduated"
   savetogether_community: "SaveTogether Community"
   #en: save_together_page_title_template: "SaveTogether | {{page_title}}"
   savetogether_page_title_template: "SaveTogether | {{page_title}}"

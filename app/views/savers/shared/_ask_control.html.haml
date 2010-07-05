@@ -1,18 +1,27 @@
 %tr
   %td{:colspan => "2"}
-    - if saver.match_amount_left_cents > 0
-      %table{:border => "0", :cellpadding => "1", :width => "75%"}
-        - form_for :donation, :url => {:controller => :donations, :action => :create} do |f|
-          %tr
-            %td{:align => "right"}
-              = f.select :cents, select_pledge_amounts_cents_values(saver.match_amount_left_cents)
-              = f.hidden_field :to_user_id, :value => saver.id
-            %td{:align => "left"}
-              = image_submit_tag "#{image_path('buttons/match.gif')}", :alt => 'Match'
-    - else
+    - if saver.saver_graduated?
       %table{:border => "0", :cellpadding => "1", :width => "75%"}
         %tr
           %td{:align => "center"}
             %p.large-text
               %em
-                = "#{:already_funded.l}"
+                %a{:href => "/faq#graduated", :title => :graduated_saver_hover_link.l, :target => "_blank"}
+                  = "#{:saver_graduated.l}"
+    - else
+      - if saver.match_amount_left_cents > 0
+        %table{:border => "0", :cellpadding => "1", :width => "75%"}
+          - form_for :donation, :url => {:controller => :donations, :action => :create} do |f|
+            %tr
+              %td{:align => "right"}
+                = f.select :cents, select_pledge_amounts_cents_values(saver.match_amount_left_cents)
+                = f.hidden_field :to_user_id, :value => saver.id
+              %td{:align => "left"}
+                = image_submit_tag "#{image_path('buttons/match.gif')}", :alt => 'Match'
+      - else
+        %table{:border => "0", :cellpadding => "1", :width => "75%"}
+          %tr
+            %td{:align => "center"}
+              %p.large-text
+                %em
+                  = "#{:already_funded.l}"

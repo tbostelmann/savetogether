@@ -14,8 +14,9 @@
       ="#{:matched_so_far.l}:"
     %td{:align => "right"}
       %span.request-values= saver.matched_amount.format(:no_cents)
-  %tr
-    %td
-      ="#{:match_needed.l}:"
-    %td{:align => "right"}
-      %span.request-values= saver.match_amount_left.format(:no_cents)
+  - unless saver.saver_graduated?
+    %tr
+      %td
+        ="#{:match_needed.l}:"
+      %td{:align => "right"}
+        %span.request-values= saver.match_amount_left.format(:no_cents)

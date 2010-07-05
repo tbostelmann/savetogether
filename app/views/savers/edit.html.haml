@@ -63,5 +63,11 @@
                 = select :saver, :asset_type_id, AssetType.all.collect {|p| [ p.asset_name, p.id ] }, { :include_blank => true }
             %tr
               %td{:align => "right"}
+                %p.large-text
+                  = "Graduated:"
+              %td{:align => "left"}
+                = check_box :saver, :saver_graduated
+            %tr
+              %td{:align => "right"}
                 = submit_tag :save_changes.l
               %td{:align => "right"}
