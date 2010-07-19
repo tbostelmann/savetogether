@@ -1017,6 +1017,8 @@ en:
   re_type_your_password_to_confirm: "Re-type your password to confirm:"
   #en: read_more: read more
   read_more: read more
+  #en: receive_saver_updates: Receive saver updates?
+  receive_saver_updates: Receive saver updates?
   #en: recent: Recent
   recent: Recent
   #en: recent_activity: Recent activity
@@ -1115,6 +1117,8 @@ en:
   save_reply: Save reply
   #en: saver_graduated: Graduated
   saver_graduated: "Graduated"
+  #en: saver_update: Updates
+  saver_update: "Updates"
   savetogether_community: "SaveTogether Community"
   #en: save_together_page_title_template: "SaveTogether | {{page_title}}"
   savetogether_page_title_template: "SaveTogether | {{page_title}}"

@@ -36,7 +36,17 @@
             %h3= :about_me.l
             = text_area :saver, :description, :class => "rich_text_editor", :style => "width:91%; height:232px; margin: 10px 0 10px 0;"
 
+          .indent
+            %h3= :saver_update.l
+            = text_area :saver, :update_description, :class => "rich_text_editor", :style => "width:91%; height:75px; margin: 10px 0 10px 0;"
+
           %table{:width => "91%", :cellspacing => "0", :cellpadding => "0", :border => "0"}
+            %tr
+              %td{:align => "right"}
+                %p.large-text
+                  = "Email Update to Donors?:"
+              %td{:align => "left"}
+                = check_box_tag 'email_update_to_donors'
             %tr
               %td{:align => "right"}
                 %p.large-text

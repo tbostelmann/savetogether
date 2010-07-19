@@ -63,6 +63,11 @@
         .story
           %p.no-margin
             = @saver.description
+        %h3
+          = :saver_update.l
+        .story{:style => "height:100px;"}
+          %p.no-margin
+            = @saver.update_description
         - if @saver.is_successful_saver?
           .text{:style => "margin-top: 40px; margin-right: 10px;"}
             =link_to image_tag(image_path('buttons/get-started.jpg'), {:alt => 'get started', :style => "float: right; margin-top: 10px;"}), match_savers_path

@@ -23,6 +23,9 @@ class SaversController < BaseController
         @saver.track_activity(:updated_profile)
 
         flash[:notice] = :your_changes_were_saved.l
+        if params[:email_update_to_donors]
+          email_update_to_donors
+        end
 
         redirect_to saver_path(@saver)
       else
@@ -112,6 +115,15 @@ class SaversController < BaseController
     #@saver.donations_received.each do |d|
     #  @donors << d.from_user
     #end
+  end
+
+  def email_update_to_donors
+    @saver     = Saver.find(params[:id])
+    @saver.donors.each { | each_donor |
+      if each_donor.receive_saver_updates
+        UserNotifier.deliver_saver_update_notice(@saver, each_donor)
+      end
+      }
   end
 
   private
