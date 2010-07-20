@@ -47,6 +47,7 @@
                 = :show_pyramid.l
             %p{:class => "text12", :width => "32%", :height => "36"}
               = check_box :user, :receive_saver_updates
-              = :receive_saver_updates.l
+              %a{:href => "/faq#saver_updates", :title => "Go to FAQ to find about Saver Updates", :target => "_blank"}
+                = :receive_saver_updates.l
             %p
               = submit_tag :save_changes.l

@@ -80,11 +80,19 @@
         What is the Network of Good?
       %p
         To encourage the community concept, we want to recognize those of you who refer your family and friends to the site.  The Network of Good  tallies up the donation amount of those that you refer as well as those that your referrers referred (and so on).  You can hide your Network of Good by un-checking the 'Show Network of Good' checkbox in your
-        - path = if current_user then edit_donor_path( current_user ) else about_us_path end
-        =link_to_unless( current_user.nil?, "profile page.", path, :title => "Go to edit profile page" )
+        - path = if current_user and current_user.is_donor? then edit_donor_path( current_user ) else signup_or_login_path end
+        =link_to("profile page.", path, :title => "Go to edit profile page" )
         - if current_user
           To start building your Network now,
           =link_to " click here.", do_more_path, :title => "Go to Do More page"
+      %a{:name => 'saver_updates'}
+      %h4
+        What is a saver update and how often will I receive one?
+      %p
+        Every saver on our website is working with a community-based organization.  We ask our partners to provide quarterly updates on the progress of their savers.  When we receive these updates, we will email you with an update.   If at anytime you no longer want to receive an update please login to SaveTogether, access your
+        - path = if current_user and current_user.is_donor? then edit_donor_path( current_user ) else signup_or_login_path end
+        =link_to("Profile,", path, :title => "Go to edit profile page" )
+        and uncheck the Receive Saver Updates checkbox.
 
     .block.no-border
 

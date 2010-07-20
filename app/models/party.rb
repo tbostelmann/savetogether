@@ -202,5 +202,9 @@ class Party < User
 
   def to_label
     "#{first_name} (#{type})"
-  end  
+  end
+
+  def is_donor?
+    return false
+  end
 end

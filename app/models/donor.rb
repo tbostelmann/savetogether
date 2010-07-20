@@ -167,5 +167,9 @@ class Donor < Party
   def public_pyramid?
     return ( self.show_pyramid? and self.has_significant_pyramid_base? )
   end
+
+  def is_donor?
+    return true
+  end
   
 end
