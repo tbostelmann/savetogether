@@ -86,8 +86,9 @@ class Saver < Party
   end
 
   def self.find_random_successful_savers(*args)
-    with_scope(:find => {:conditions => ["requested_match_cents = 0 AND profile_public is true AND featured_user is true"], :order => 'rand()'}) do
-      find(*args)
+    with_scope(:find => {:conditions => ["requested_match_cents > 0 AND profile_public is true AND featured_user is true"], :order => 'rand()'}) do
+      some_savers = find(*args)
+      some_savers.select { | each_saver | each_saver.match_amount_left_cents <= 0 }
     end
   end
 
