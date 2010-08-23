@@ -15,7 +15,22 @@
               Now you can!
 
     #success-stories{:style => "float: right; width: 220px; height: 340px;"}
-      .success-story#fadeOn
+      .success-story#fadeOn{:style => "border: 4px solid #5B930D;"}
+        %p{:style => "font-size: 36px; font-weight: bold; color: #5B930D; padding: 10px;" }
+          %u
+            = :our_impact.l
+        %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
+          = @donated_amount.format(:html)
+          = :donated.l
+        %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
+          = @number_of_savers
+          = :savers.l
+        %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
+          = @number_of_donors
+          = :members.l.downcase
+        %p
+          = "  "
+      .success-story{:style => "display: none;"}
         .image{:style => "width: 220px; border: 1px dashed #bbbbbb;"}
           = link_to((image_tag @successful_savers[0].avatar_photo_url(:small), {:alt => @successful_savers[0].display_name, :style => "width: 210px; height: 210px; margin: 5px;"}), saver_path(@successful_savers[0]))
         .display-name
@@ -25,36 +40,32 @@
             =truncate @successful_savers[0].short_description, :length => 160, :omission => "&hellip;"
           - else
             =truncate @successful_savers[0].description, :length => 160, :omission => "&hellip;"
-      - (1..2).each do |i|
-        - if i == 1
-          -# put code to show impact
-          .success-story{:style => "display: none; border: 4px solid #5B930D;"}
-            %p{:style => "font-size: 36px; font-weight: bold; color: #5B930D; padding: 10px;" }
-              %u
-                = :our_impact.l
-            %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
-              = @donated_amount.format(:html)
-              = :donated.l
-            %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
-              = @number_of_savers
-              = :savers.l
-            %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
-              = @number_of_donors
-              = :members.l.downcase
-            %p
-              = "  "
-        - else
-          - (1..(@successful_savers.size - 1)).each do |index|
-            .success-story{:style => "display: none;"}
-              .image{:style => "width: 220px; border: 1px dashed #bbbbbb;"}
-                = link_to((image_tag @successful_savers[index].avatar_photo_url(:small), {:alt => @successful_savers[index].display_name, :style => "width: 210px; height: 210px; margin: 5px;"}), saver_path(@successful_savers[index]))
-              .display-name
-                =link_to "#{@successful_savers[index].display_name}: A Success Story", saver_path(@successful_savers[index])
-              %p
-                - if @successful_savers[index].short_description?
-                  =truncate @successful_savers[index].short_description, :length => 160, :omission => "&hellip;"
-                - else
-                  =truncate @successful_savers[index].description, :length => 160, :omission => "&hellip;"
+      - (1..(@successful_savers.size - 1)).each do |index|
+        .success-story{:style => "display: none; border: 4px solid #5B930D;"}
+          %p{:style => "font-size: 36px; font-weight: bold; color: #5B930D; padding: 10px;" }
+            %u
+              = :our_impact.l
+          %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
+            = @donated_amount.format(:html)
+            = :donated.l
+          %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
+            = @number_of_savers
+            = :savers.l
+          %p{:style => "font-size: 26px; font-weight: bold; color: #ec972c; padding: 10px;"}
+            = @number_of_donors
+            = :members.l.downcase
+          %p
+            = "  "
+        .success-story{:style => "display: none;"}
+          .image{:style => "width: 220px; border: 1px dashed #bbbbbb;"}
+            = link_to((image_tag @successful_savers[index].avatar_photo_url(:small), {:alt => @successful_savers[index].display_name, :style => "width: 210px; height: 210px; margin: 5px;"}), saver_path(@successful_savers[index]))
+          .display-name
+            =link_to "#{@successful_savers[index].display_name}: A Success Story", saver_path(@successful_savers[index])
+          %p
+            - if @successful_savers[index].short_description?
+              =truncate @successful_savers[index].short_description, :length => 160, :omission => "&hellip;"
+            - else
+              =truncate @successful_savers[index].description, :length => 160, :omission => "&hellip;"
     .explain{:style => "float: left; width: 675px;"}
       #one{:style => "float: left; width: 223px; margin-top: 10px;"}
         =image_tag image_path('graphics/they-save.jpg'), {:alt => 'they save', :style => "margin-top: 25px;"}
