@@ -73,6 +73,14 @@ class Donor < Party
     find_random(:all, :limit => number, :conditions => ["description is NOT NULL AND description <> '' AND avatar_id is NOT NULL"])
   end
 
+  def self.total_donation_amount
+    Donor.find(:all).sum { |each_donor | each_donor.total_donation_amount }
+  end
+
+  def self.number_of_donors
+    Donor.count
+  end
+
   def donations_grouped_by_beneficiaries
     donations_given.find(:all).group_by{ |d| d.to_user }
   end

@@ -4,6 +4,9 @@ class BaseController < ApplicationController
     @featured_savers  = Saver.find_random_featured(:all, :limit => 3)
     @partner_list     = random_partner_list
     @featured_donors   = Donor.find_featured_donor(3)
+    @donated_amount = Donor.total_donation_amount
+    @number_of_savers = Saver.number_of_savers
+    @number_of_donors = Donor.number_of_donors
 
     # DPIRONE: note this does a lot of extra work to get CE meta data that we presently don't use,
     # so commenting out to save CPU cycles ...

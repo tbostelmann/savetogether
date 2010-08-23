@@ -92,6 +92,10 @@ class Saver < Party
     end
   end
 
+  def self.number_of_savers
+    Saver.count
+  end
+
   def is_successful_saver?
     return requested_match_cents <= 0
   end

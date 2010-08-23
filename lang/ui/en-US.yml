@@ -354,6 +354,8 @@ en:
   donate: Donate
   #en: donate_to_savetogether: Donate to SaveTogether
   donate_to_savetogether: Donate to SaveTogether
+  #en: donated: donated
+  donated: donated
   #en: donation_amount: ${{amount}}
   donation_amount: ${{amount}}
   #en: donation_amount_to_st: "{{amount}} ({{percent}}%%)"
@@ -890,6 +892,8 @@ en:
   organizations: Organizations
   organization_description: Description
   organization_name: Organization Name
+  #en: our_impact: Our Impact
+  our_impact: Our Impact
   #en: page: page
   page: page
   #en: pages: "Pages:"
@@ -1119,6 +1123,8 @@ en:
   saver_graduated: "Graduated"
   #en: saver_update: Updates
   saver_update: "Updates"
+  #en: savers: savers
+  savers: savers
   savetogether_community: "SaveTogether Community"
   #en: save_together_page_title_template: "SaveTogether | {{page_title}}"
   savetogether_page_title_template: "SaveTogether | {{page_title}}"
