@@ -62,7 +62,7 @@
             .image{:style => "width: 220px; border: 1px dashed #bbbbbb;"}
               = link_to((image_tag @successful_savers[index].avatar_photo_url(:small), {:alt => @successful_savers[index].display_name, :style => "width: 210px; height: 210px; margin: 5px;"}), saver_path(@successful_savers[index]))
             .display-name
-              =link_to "#{@successful_savers[0].display_name}: " + :already_funded.l, saver_path(@successful_savers[index])
+              =link_to "#{@successful_savers[index].display_name}: " + :already_funded.l, saver_path(@successful_savers[index])
             %p
               - if @successful_savers[index].short_description?
                 =truncate @successful_savers[index].short_description, :length => 160, :omission => "&hellip;"
