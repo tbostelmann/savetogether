@@ -125,8 +125,8 @@ en:
   argument_error_no_class_params_supplied: "No class parameters were supplied"
   argument_error_line_item_not_in_current_pledge: "LineItem with supplied id {{id}} not in current pledge"
   argument_error_unable_to_save_line_item: "Could not save LineItem"
-  #en: as_of_today: (As of today)
-  as_of_today: (As of today)
+  #en: as_of_today: As of
+  as_of_today: As of
   #en: assume_id: Assume ID
   assume_id: Assume ID
   #en: assume_user_id: "Assume this user's ID"
