@@ -14,7 +14,19 @@
             %span{:style => "font-size: 26px; font-weight: bold; color: #ec972c; font-style: italic;"}
               Now you can!
 
-    #success-stories{:style => "float: right; width: 220px; height: 340px;  margin-top: 30px"}
+    #site-transition{:style => "float: right; width: 220px; height: 340px;  margin-top: 30px; "}
+      %p{:style => "color: #5B930D;"}
+        = "-------------------------------------------------------------------"
+      %p{:style => "font-size: 26px; font-weight: bold; color: #5B930D;" }
+        = "An Important Update from SaveTogether"
+      %p{:style => "font-size: 20px; font-weight: bold; color: #ec972c;" }
+        =link_to "http://bit.ly/cKkHC5 ", "http://bit.ly/cKkHC5 ", :popup => true
+      %p
+      %p{:style => "color: #5B930D;"}
+        = "-------------------------------------------------------------------"
+
+    -##success-stories{:style => "float: right; width: 220px; height: 340px;  margin-top: 30px"}
+    -#
       .success-story#fadeOn{:style => "border: 1px dashed #bbbbbb;"}
         %p{:style => "font-size: 26px; font-weight: bold; color: #5B930D; padding: 10px;" }
           = :our_impact.l
